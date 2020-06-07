@@ -3,4 +3,3 @@
 
 ## Otus Developer C++ Course
 Homework "TIMUS"
-
