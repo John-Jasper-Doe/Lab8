@@ -1,0 +1,11 @@
+dist: xenial
+
+language: cpp
+
+before_script:
+- sudo apt update
+
+script:
+- cmake .
+- cmake --build .
+
