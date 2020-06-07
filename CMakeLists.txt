@@ -19,6 +19,11 @@ if (DEFINED ENV{TRAVIS_BUILD_NUMBER})
 endif ()
 set(TIMUS_VERSION ${TIMUS_MAJOR}.${TIMUS_MINOR}.${TIMUS_PATCH})
 
+## Set property
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_compile_options(-Wall -Werror -Wextra -Wpedantic -g -O0)
+
 # Setting up a project.
 include(print)
 include(function)
