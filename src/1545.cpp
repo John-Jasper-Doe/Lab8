@@ -68,7 +68,7 @@ int main() {
 
   char key;
   std::cin >> key;
-  for (auto s : dict[key])
+  for (const auto& s : dict[key])
     std::cout << s << std::endl;
 }
 

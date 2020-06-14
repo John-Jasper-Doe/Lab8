@@ -61,7 +61,7 @@ int main() {
       it->second += 1;
   }
 
-  for (auto& account : dict) {
+  for (const auto& account : dict) {
     if (account.second > 1)
       std::cout << account.first << std::endl;
   }

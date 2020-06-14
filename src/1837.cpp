@@ -76,7 +76,7 @@ void print(const num_isenb_t& num_isenb) {
   std::vector<std::pair<std::string, int>> vec(num_isenb.begin(), num_isenb.end());
   std::sort(vec.begin(), vec.end());
 
-  for (auto& p: vec) {
+  for (const auto& p: vec) {
     if (p.second != -1)
       std::cout << p.first << " " << p.second << std::endl;
     else
@@ -84,7 +84,7 @@ void print(const num_isenb_t& num_isenb) {
   }
 }
 
-void calc(pair_gamers_t& pairs, pair_gamers_t::iterator start, num_isenb_t& dist) {
+void calc(const pair_gamers_t& pairs, pair_gamers_t::iterator start, num_isenb_t& dist) {
   dist[start->first] = 0;
 
   std::queue<std::string> queue;
@@ -94,7 +94,7 @@ void calc(pair_gamers_t& pairs, pair_gamers_t::iterator start, num_isenb_t& dist
     std::string u = std::move(queue.front());
     queue.pop();
 
-    for (const std::string &w: pairs[u]) {
+    for (const std::string& w: pairs.at(u)) {
       if (dist[w] == -1) {
         dist[w] = dist[u] + 1;
         queue.push(w);
@@ -129,7 +129,7 @@ int main() {
   }
 
   num_isenb_t num_isenbaev;
-  for (auto& p: pairs) {
+  for (const auto& p: pairs) {
     num_isenbaev[p.first] = -1;
   }
 
